@@ -73,7 +73,7 @@ argument-hint: "[--days N 变更窗口 | --missed 查看已过期的窗口]"
 
 ## 工作日检查
 
-每个取消截止日期必须回退至最后一个工作日。中国法下，以合同约定的管辖法域确定节假日范围 `[模型知识 — 需验证]`。记录 `cancel_by_calendar` 和 `cancel_by_effective` 两个日期。以有效日期触发预警。
+每个取消截止日期必须回退至最后一个工作日。中国法下，以合同约定的管辖法域确定节假日范围。记录 `cancel_by_calendar` 和 `cancel_by_effective` 两个日期。以有效日期触发预警。
 
 ## 模式
 
