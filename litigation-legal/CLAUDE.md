@@ -3,19 +3,19 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
 2. If that file does not exist or still contains [PLACEHOLDER] markers, STOP before doing substantive work. Say: "此插件需要完成设置才能提供有用输出。请运行 /litigation-legal:cold-start-interview —— 约需 10-15 分钟，插件中所有命令均依赖此设置。未完成设置前输出的内容将是通用的，可能不匹配你的实务操作。" Do NOT proceed with placeholder or default configuration. The only skills that run without setup are /litigation-legal:cold-start-interview itself and any --check-integrations flag.
 3. Setup and cold-start-interview WRITE to that path, creating parent directories as needed.
 4. On first run after a plugin update, if a populated CLAUDE.md exists at the old cache path
-   (~/.claude/plugins/cache/claude-for-legal/litigation-legal/<version>/CLAUDE.md for any version)
+   (~/.claude/plugins/cache/claude-for-legal-zh/litigation-legal/<version>/CLAUDE.md for any version)
    but not at the config path, copy it forward to the config path before proceeding.
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**共享公司画像。** 公司级别信息存储在 `~/.claude/plugins/config/claude-for-legal/company-profile.md`——位于本文件上层，由全部插件共享。在读取本插件的实践画像前先读取该文件。如该文件不存在，本插件的设置流程会创建它。
+**共享公司画像。** 公司级别信息存储在 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`——位于本文件上层，由全部插件共享。在读取本插件的实践画像前先读取该文件。如该文件不存在，本插件的设置流程会创建它。
 -->
 
 # 诉讼业务实践画像
@@ -351,7 +351,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ### 验证日志
 
-在 `~/.claude/plugins/config/claude-for-legal/litigation-legal/verification-log.md` 中记录核实条目：
+在 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/verification-log.md` 中记录核实条目：
 
 `[YYYY-MM-DD] [引用或事实] 由 [姓名] 对照 [来源] 核实 —— [结论：已确认 / 已修正为 X / 无法核实]`
 
@@ -365,7 +365,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ## 本领域的临时问题
 
-当用户在本插件的实践领域提出问题，首先读取 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`，并应用。如已填充，以已配置的助手身份回答——使用其风险偏好、争议画像、文书风格和上报链。
+当用户在本插件的实践领域提出问题，首先读取 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`，并应用。如已填充，以已配置的助手身份回答——使用其风险偏好、争议画像、文书风格和上报链。
 
 ## 比例原则
 
@@ -389,7 +389,7 @@ Rules for every skill, command, and agent in this plugin:
 **活跃事项：** 无
 **跨事项背景：** 关
 
-当事项工作区启用时，技能在活跃事项的背景下工作。技能读取本实践级 CLAUDE.md 获得实践画像级规则，读取事项的 `matter.md` 获得事项级事实和覆盖。输出写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/<matter-slug>/` 下的事项文件夹。
+当事项工作区启用时，技能在活跃事项的背景下工作。技能读取本实践级 CLAUDE.md 获得实践画像级规则，读取事项的 `matter.md` 获得事项级事实和覆盖。输出写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/<matter-slug>/` 下的事项文件夹。
 
 当跨事项背景关闭（默认），在事项 A 中工作的技能永不会读取事项 B 的文件。应跨事项传承的学习内容写入本实践级 CLAUDE.md，而非事项文件夹。
 

@@ -3,19 +3,19 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
 2. If that file does not exist or still contains [PLACEHOLDER] markers, STOP before doing substantive work. Say: "本插件需要进行初始设置后才能为您提供有效输出。请运行 /corporate-legal:cold-start-interview —— 约需10-15分钟，本插件所有指令均依赖该设置。未完成设置前，输出内容将是通用模板，可能与您的实务操作不匹配。" Do NOT proceed with placeholder or default configuration. The only skills that run without setup are /corporate-legal:cold-start-interview itself and any --check-integrations flag.
 3. Setup and cold-start-interview WRITE to that path, creating parent directories as needed.
 4. On first run after a plugin update, if a populated CLAUDE.md exists at the old cache path
-   (~/.claude/plugins/cache/claude-for-legal/corporate-legal/<version>/CLAUDE.md for any version)
+   (~/.claude/plugins/cache/claude-for-legal-zh/corporate-legal/<version>/CLAUDE.md for any version)
    but not at the config path, copy it forward to the config path before proceeding.
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # 公司业务实务画像
@@ -60,7 +60,7 @@ Rules for every skill, command, and agent in this plugin:
 
 | 集成 | 状态 | 不可用时的替代方案 |
 |---|---|---|
-| 数据室（飞书/坚果云/Box） | [✓ / ✗] | 尽调文件从本地文件夹提取；用户将文档放入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/vdr-mirror/` |
+| 数据室（飞书/坚果云/Box） | [✓ / ✗] | 尽调文件从本地文件夹提取；用户将文档放入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/vdr-mirror/` |
 | 董事会门户（飞书云文档等） | [✓ / ✗] | 从本地模板生成会议纪要/决议；不推送至门户 |
 | 文档存储（飞书云文档/Google Drive/SharePoint/Box） | [✓ / ✗] | 读取本地路径；无跨系统搜索 |
 | 飞书/Slack | [✓ / ✗] | 摘要仅以文件形式输出；无频道内推送 |
@@ -181,7 +181,7 @@ Rules for every skill, command, and agent in this plugin:
 
 **文件读取失败。** 当无法读取用户指向的文件时，不要无声失败。说明情况并提供替代方案。
 
-**验证日志。** 当您或用户核实了一个标记项时，将单行记录写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/verification-log.md`：
+**验证日志。** 当您或用户核实了一个标记项时，将单行记录写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/verification-log.md`：
 
 `[YYYY-MM-DD] [引用或事实] 由[姓名]对照[来源]核实 —— [结论：已确认 / 更正为X / 无法核实]`
 
@@ -438,7 +438,7 @@ Rules for every skill, command, and agent in this plugin:
 **关联方交易协议订立情况：**[PLACEHOLDER —— 已订立/未订立/部分订立]
 **子公司治理频次：**[PLACEHOLDER —— 子公司定期会议频次（如有）]
 
-**合规追踪器：** `~/.claude/plugins/config/claude-for-legal/corporate-legal/entities/compliance-tracker.yaml`
+**合规追踪器：** `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/entities/compliance-tracker.yaml`
 **最近一次合规报告：**[PLACEHOLDER —— 日期或空]
 **最近一次合规体检：**[PLACEHOLDER —— 日期或空]
 

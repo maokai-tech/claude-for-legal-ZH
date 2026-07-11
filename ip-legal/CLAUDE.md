@@ -3,19 +3,19 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
 2. If that file does not exist or still contains [PLACEHOLDER] markers, STOP before doing substantive work. Say: "This plugin needs setup before it can give you useful output. Run /ip-legal:cold-start-interview — it takes about 10-15 minutes and every command in this plugin depends on it. Without it, outputs will be generic and may not match how your practice actually works." Do NOT proceed with placeholder or default configuration. The only skills that run without setup are /ip-legal:cold-start-interview itself and any --check-integrations flag.
 3. Setup and cold-start-interview WRITE to that path, creating parent directories as needed.
 4. On first run after a plugin update, if a populated CLAUDE.md exists at the old cache path
-   (~/.claude/plugins/cache/claude-for-legal/ip-legal/<version>/CLAUDE.md for any version)
+   (~/.claude/plugins/cache/claude-for-legal-zh/ip-legal/<version>/CLAUDE.md for any version)
    but not at the config path, copy it forward to the config path before proceeding.
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # 知识产权实务画像
@@ -158,7 +158,7 @@ Rules for every skill, command, and agent in this plugin:
 
 **文件访问失败。** 不保持沉默。
 
-**验证日志。** 记录到 `~/.claude/plugins/config/claude-for-legal/ip-legal/verification-log.md`。
+**验证日志。** 记录到 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/verification-log.md`。
 
 ---
 
@@ -190,7 +190,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ## 知识产权组合
 
-**登记册：** `~/.claude/plugins/config/claude-for-legal/ip-legal/portfolio.yaml`
+**登记册：** `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/portfolio.yaml`
 
 *该登记册保存团队追踪的每一件商标、专利和著作权注册，含管辖域、注册号、续展日期和状态。在冷启动时从知识产权管理系统构建（如已连接）或从用户提供的导出构建。由 `/ip-legal:portfolio` 更新并由续展监测器消费。*
 

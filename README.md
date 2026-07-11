@@ -654,19 +654,26 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 
 <table align="center">
   <tr>
-    <td align="center" width="300">
+    <td align="center" width="260">
       <a href="https://github.com/kanekanefy">
         <img src="https://github.com/kanekanefy.png" width="80" style="border-radius: 50%;" alt="kanekanefy"><br>
         <b>@kanekanefy</b>
       </a><br>
       Codex 多端适配层<br>一键安装脚本
     </td>
-    <td align="center" width="300">
+    <td align="center" width="260">
       <a href="https://github.com/icedfish">
         <img src="https://github.com/icedfish.png" width="80" style="border-radius: 50%;" alt="Xiaopai"><br>
         <b>@icedfish</b>（Xiaopai）
       </a><br>
       知识库检索约定收敛<br>民诉法条号修正
+    </td>
+    <td align="center" width="260">
+      <a href="https://github.com/xingbogu">
+        <img src="https://github.com/xingbogu.png" width="80" style="border-radius: 50%;" alt="xingbogu"><br>
+        <b>@xingbogu</b>
+      </a><br>
+      插件配置路径隔离<br>避免中美版本串扰
     </td>
   </tr>
 </table>
